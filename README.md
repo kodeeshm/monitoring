@@ -1,5 +1,5 @@
-# Monitoring Script for packet dropped, Uptime, RX and TX with Purge enabled
-## Place the script the on the server and run the following commands to start...
+## Monitoring Script for packet dropped, Uptime, RX and TX with Purge enabled
+### Place the script the on the server and run the following commands to start...
 
 ###### You have to update the common drive details in the script before beginning the steps.
 Line no 34: scp $FILE USERNAME@REMOTEHOST:/<LOG_LOCATION>

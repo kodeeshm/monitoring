@@ -31,4 +31,4 @@ echo "-------------------------------" >> $FILE
 echo -e "Done..." >> $FILE
 
 # Purge based on Log Retention duration
-find . -maxdepth 1 -type f -ctime -$LOG_RETENTION -exec rm \{\} \;
+find . -maxdepth 1 -type f -name "*.log" -ctime -$LOG_RETENTION -exec rm \{\} \;

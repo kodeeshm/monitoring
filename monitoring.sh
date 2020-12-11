@@ -2,6 +2,7 @@
 
 DATE=$(date +'%Y-%m-%d')
 LOGNAME=$(date +"%Y-%m-%d-%T" | sed -e 's/:/'_'/g')
+LOG_RETENTION="7"
 
 # Write a log file with details
 DEVICENAME=`hostname`
@@ -28,3 +29,6 @@ uptime >> $FILE
 echo "" >> $FILE
 echo "-------------------------------" >> $FILE
 echo -e "Done..." >> $FILE
+
+# Purge based on Log Retention duration
+find . -maxdepth 1 -type f -ctime -$LOG_RETENTION -exec rm \{\} \;

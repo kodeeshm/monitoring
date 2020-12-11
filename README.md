@@ -1,4 +1,4 @@
-# Monitoring Script
+# Monitoring Script with Purge enabled
 ## Place the script the on the server and run the following commands to start...
 
 - **Step1:** 

@@ -30,5 +30,11 @@ echo "" >> $FILE
 echo "-------------------------------" >> $FILE
 echo -e "Done..." >> $FILE
 
+# Copy files to a common location
+scp $FILE USERNAME@REMOTEHOST:/<LOG_LOCATION>
+if [ $? !=0 ]; then
+echo 'Log copy to common drive failed...' >> $FILE
+fi
+
 # Purge based on Log Retention duration
-find . -maxdepth 1 -type f -name "*.log" -ctime -$LOG_RETENTION -exec rm \{\} \;
+find . -maxdepth 1 -type f -ctime -$LOG_RETENTION -exec rm \{\} \;

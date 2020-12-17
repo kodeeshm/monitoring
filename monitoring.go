@@ -27,7 +27,7 @@ func main() {
 
     output_filename := out + "_" + current_date + "_" + epoach_secs + ".log"
 
-    // create output log file if it's not exist
+    // create output log file if it does not exist
     file, err := os.OpenFile(output_filename, os.O_WRONLY|os.O_CREATE, 0666)
     if err != nil {
         fmt.Println("File does not exists or cannot be created")
@@ -79,4 +79,3 @@ func main() {
     fmt.Fprintf(w, "%s\n", output)
     w.Flush()
 }
-
